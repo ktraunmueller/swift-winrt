@@ -11,7 +11,7 @@
             "hidden": true,
             "generator": "Ninja",
             "architecture": {
-                "value": "x64",
+                "value": "arm64",
                 "strategy": "external"
             },
             "cacheVariables": {
