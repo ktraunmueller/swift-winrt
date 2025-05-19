@@ -45,4 +45,124 @@ public enum __IMPL_Windows_Storage_FileProperties {
 
     }
 
+    public enum BasicPropertiesBridge: AbiBridge {
+        public typealias SwiftProjection = BasicProperties
+        public typealias CABI = __x_ABI_CWindows_CStorage_CFileProperties_CIBasicProperties
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CFileProperties_CIBasicProperties>?) -> BasicProperties? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum DocumentPropertiesBridge: AbiBridge {
+        public typealias SwiftProjection = DocumentProperties
+        public typealias CABI = __x_ABI_CWindows_CStorage_CFileProperties_CIDocumentProperties
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CFileProperties_CIDocumentProperties>?) -> DocumentProperties? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum ImagePropertiesBridge: AbiBridge {
+        public typealias SwiftProjection = ImageProperties
+        public typealias CABI = __x_ABI_CWindows_CStorage_CFileProperties_CIImageProperties
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CFileProperties_CIImageProperties>?) -> ImageProperties? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum MusicPropertiesBridge: AbiBridge {
+        public typealias SwiftProjection = MusicProperties
+        public typealias CABI = __x_ABI_CWindows_CStorage_CFileProperties_CIMusicProperties
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CFileProperties_CIMusicProperties>?) -> MusicProperties? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageItemContentPropertiesBridge: AbiBridge {
+        public typealias SwiftProjection = StorageItemContentProperties
+        public typealias CABI = __x_ABI_CWindows_CStorage_CFileProperties_CIStorageItemContentProperties
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CFileProperties_CIStorageItemContentProperties>?) -> StorageItemContentProperties? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageItemThumbnailBridge: AbiBridge {
+        public typealias SwiftProjection = StorageItemThumbnail
+        public typealias CABI = __x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CStreams_CIRandomAccessStreamWithContentType>?) -> StorageItemThumbnail? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum VideoPropertiesBridge: AbiBridge {
+        public typealias SwiftProjection = VideoProperties
+        public typealias CABI = __x_ABI_CWindows_CStorage_CFileProperties_CIVideoProperties
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CFileProperties_CIVideoProperties>?) -> VideoProperties? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+}
+@_spi(WinRTInternal)
+public class IStorageItemExtraPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageItemExtraProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage_FileProperties.IStorageItemExtraProperties = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage_FileProperties.IStorageItemExtraPropertiesBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class BasicPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = BasicProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return BasicProperties(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class DocumentPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = DocumentProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return DocumentProperties(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class ImagePropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = ImageProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return ImageProperties(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class MusicPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = MusicProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return MusicProperties(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageItemContentPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = StorageItemContentProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageItemContentProperties(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageItemThumbnailMaker: MakeFromAbi {
+    public typealias SwiftType = StorageItemThumbnail
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageItemThumbnail(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class VideoPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = VideoProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return VideoProperties(fromAbi: abi)
+    }
 }

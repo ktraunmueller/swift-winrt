@@ -1,6 +1,8 @@
 #include "resources.h"
 
 Aggregation RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\Aggregation.swift"
+Array+FromAbi RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\Array+FromAbi.swift"
+Array+ToAbi RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\Array+ToAbi.swift"
 Array+toVector RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\Array+toVector.swift"
 COM+Extensions RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\COM+Extensions.swift"
 ComPtr RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\ComPtr.swift"
@@ -33,6 +35,7 @@ WinRTWrapperBase RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\WinRTWrap
 WinSDK+Extensions RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\WinSDK+Extensions.swift"
 PropertyValue RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\PropertyValue.swift"
 PropertyValue+ABI RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\PropertyValue+ABI.swift"
+WinRTBridgeable RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\WinRTBridgeable.swift"
 WinRTProtocols RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\WinRTProtocols.swift"
 Event RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\Events\\Event.swift"
 EventHandlerSubscription RESOURCE_TYPE_SWIFT_SUPPORT_FILE "Resources\\Support\\Events\\EventHandlerSubscription.swift"

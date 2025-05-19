@@ -46,7 +46,8 @@ namespace swiftwinrt
     // Writes the existential version of an interface, such as AnyIClosable for "any IClosable"
     void write_swift_interface_existential_identifier(writer& w, metadata_type const& iface);
 
+    void write_default_value(writer& w, metadata_type const& sig, projection_layer layer);
     void write_default_init_assignment(writer& w, metadata_type const& sig, projection_layer layer);
 
-    write_type_params swift_write_type_params_for(metadata_type const& type);
+    write_type_params swift_write_type_params_for(metadata_type const& type, bool is_array = false);
 }

@@ -22,12 +22,6 @@ public final class PropertySet : WinRTClass, IObservableMap, IMap, IIterable, IP
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CCollections_CIPropertySet>?) -> PropertySet? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -121,12 +115,6 @@ public final class StringMap : WinRTClass, IMap, IIterable, IObservableMap {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_C__FIMap_2_HSTRING_HSTRING>?) -> StringMap? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -215,12 +203,6 @@ public final class ValueSet : WinRTClass, IObservableMap, IMap, IIterable, IProp
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CCollections_CIPropertySet>?) -> ValueSet? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -316,6 +298,8 @@ public protocol IIterator<T> : WinRTInterface {
     associatedtype T
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.movenext)
     func moveNext() -> Bool
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.getmany)
+    func getMany(_ items: inout [T]) -> UInt32
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.current)
     var current: T { get }
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.iiterator-1.hascurrent)
@@ -456,6 +440,8 @@ public protocol IVectorView<T> : IIterable, Collection where Element == T, Index
     func getAt(_ index: UInt32) -> T
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.indexof)
     func indexOf(_ value: T, _ index: inout UInt32) -> Bool
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.getmany)
+    func getMany(_ startIndex: UInt32, _ items: inout [T]) -> UInt32
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivectorview-1.size)
     var size: UInt32 { get }
 }
@@ -483,6 +469,10 @@ public protocol IVector<T> : IIterable, Collection where Element == T, Index == 
     func removeAtEnd()
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.clear)
     func clear()
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.getmany)
+    func getMany(_ startIndex: UInt32, _ items: inout [T]) -> UInt32
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.replaceall)
+    func replaceAll(_ items: [T])
     /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.foundation.collections.ivector-1.size)
     var size: UInt32 { get }
 }

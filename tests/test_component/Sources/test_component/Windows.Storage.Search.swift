@@ -29,12 +29,6 @@ public final class QueryOptions : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIQueryOptions>?) -> QueryOptions? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -149,12 +143,6 @@ public final class StorageFileQueryResult : WinRTClass, IStorageQueryResultBase 
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIStorageFileQueryResult>?) -> StorageFileQueryResult? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -251,12 +239,6 @@ public final class StorageFolderQueryResult : WinRTClass, IStorageQueryResultBas
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIStorageFolderQueryResult>?) -> StorageFolderQueryResult? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -346,12 +328,6 @@ public final class StorageItemQueryResult : WinRTClass, IStorageQueryResultBase 
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult>?) -> StorageItemQueryResult? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -437,9 +413,6 @@ public struct SortEntry: Hashable, Codable, Sendable {
     public init(propertyName: String, ascendingOrder: Bool) {
         self.propertyName = propertyName
         self.ascendingOrder = ascendingOrder
-    }
-    public static func from(abi: __x_ABI_CWindows_CStorage_CSearch_CSortEntry) -> SortEntry {
-        .init(propertyName: .init(from: abi.PropertyName), ascendingOrder: .init(from: abi.AscendingOrder))
     }
 }
 

@@ -631,19 +631,24 @@ namespace swiftwinrt
         }
     }
 
+    inline std::string get_swift_member_name(std::string_view const& name)
+    {
+        return to_camel_case(name);
+    }
+
     inline std::string get_swift_name(Property const& property)
     {
-        return to_camel_case(property.Name());
+        return get_swift_member_name(property.Name());
     }
 
     inline std::string get_swift_name(Event const& event)
     {
-        return to_camel_case(event.Name());
+        return get_swift_member_name(event.Name());
     }
 
     inline std::string get_swift_name(Field const& field)
     {
-        return to_camel_case(field.Name());
+        return get_swift_member_name(field.Name());
     }
 
     inline std::string get_swift_name(Param const& param)
@@ -670,14 +675,24 @@ namespace swiftwinrt
         return local_swift_param_name(std::string(param_name));
     }
 
+    inline std::string local_swift_param_name(function_param const& param)
+    {
+        return local_swift_param_name(param.def.Name());
+    }
+
     inline std::string get_swift_name(function_param const& param)
     {
         return get_swift_name(param.def);
     }
 
+    inline std::string get_swift_name(function_return_type const& return_type)
+    {
+        return get_swift_member_name(return_type.name);
+    }
+
     inline std::string get_swift_name(property_def const& property)
     {
-        return to_camel_case(property.def.Name());
+        return get_swift_member_name(property.def.Name());
     }
 
     inline std::string get_swift_name(function_def const& function)
@@ -687,12 +702,12 @@ namespace swiftwinrt
         {
             return "handler";
         }
-        return to_camel_case(function.def.Name());
+        return get_swift_member_name(function.def.Name());
     }
 
     inline std::string get_swift_name(struct_member const& member)
     {
-        return to_camel_case(member.field.Name());
+        return get_swift_member_name(member.field.Name());
     }
 
     inline std::string_view get_abi_name(struct_member const& member)

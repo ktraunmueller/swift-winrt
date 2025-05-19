@@ -12,7 +12,13 @@
 #include "Windows.Foundation.Collections.h"
 
 /* Forward Declarations */
-#ifndef ____x_ABI_Ctest__component_CIObjectHandler_FWD_DEFINED__
+#ifndef ____x_ABI_Ctest__component_CIArrayMethodCallback_FWD_DEFINED__
+#define ____x_ABI_Ctest__component_CIArrayMethodCallback_FWD_DEFINED__
+typedef interface __x_ABI_Ctest__component_CIArrayMethodCallback __x_ABI_Ctest__component_CIArrayMethodCallback;
+
+#endif // ____x_ABI_Ctest__component_CIArrayMethodCallback_FWD_DEFINED__
+
+    #ifndef ____x_ABI_Ctest__component_CIObjectHandler_FWD_DEFINED__
 #define ____x_ABI_Ctest__component_CIObjectHandler_FWD_DEFINED__
 typedef interface __x_ABI_Ctest__component_CIObjectHandler __x_ABI_Ctest__component_CIObjectHandler;
 
@@ -24,7 +30,25 @@ typedef interface __x_ABI_Ctest__component_CIVoidToVoidDelegate __x_ABI_Ctest__c
 
 #endif // ____x_ABI_Ctest__component_CIVoidToVoidDelegate_FWD_DEFINED__
 
-    #ifndef ____x_ABI_Ctest__component_CIAsyncMethodsStatics_FWD_DEFINED__
+    #ifndef ____x_ABI_Ctest__component_CIArrayMethodsStatics_FWD_DEFINED__
+#define ____x_ABI_Ctest__component_CIArrayMethodsStatics_FWD_DEFINED__
+    typedef interface __x_ABI_Ctest__component_CIArrayMethodsStatics __x_ABI_Ctest__component_CIArrayMethodsStatics;
+
+#endif // ____x_ABI_Ctest__component_CIArrayMethodsStatics_FWD_DEFINED__
+
+#ifndef ____x_ABI_Ctest__component_CIArrayScenarios_FWD_DEFINED__
+#define ____x_ABI_Ctest__component_CIArrayScenarios_FWD_DEFINED__
+    typedef interface __x_ABI_Ctest__component_CIArrayScenarios __x_ABI_Ctest__component_CIArrayScenarios;
+
+#endif // ____x_ABI_Ctest__component_CIArrayScenarios_FWD_DEFINED__
+
+#ifndef ____x_ABI_Ctest__component_CIArrayShouldBuild_FWD_DEFINED__
+#define ____x_ABI_Ctest__component_CIArrayShouldBuild_FWD_DEFINED__
+    typedef interface __x_ABI_Ctest__component_CIArrayShouldBuild __x_ABI_Ctest__component_CIArrayShouldBuild;
+
+#endif // ____x_ABI_Ctest__component_CIArrayShouldBuild_FWD_DEFINED__
+
+#ifndef ____x_ABI_Ctest__component_CIAsyncMethodsStatics_FWD_DEFINED__
 #define ____x_ABI_Ctest__component_CIAsyncMethodsStatics_FWD_DEFINED__
     typedef interface __x_ABI_Ctest__component_CIAsyncMethodsStatics __x_ABI_Ctest__component_CIAsyncMethodsStatics;
 
@@ -2553,6 +2577,33 @@ struct __x_ABI_Ctest__component_CStructWithIReference
     __x_ABI_C__FIReference_1_int* Value2;
 };
 
+#if !defined(____x_ABI_Ctest__component_CIArrayMethodCallback_INTERFACE_DEFINED__)
+    #define ____x_ABI_Ctest__component_CIArrayMethodCallback_INTERFACE_DEFINED__
+    typedef struct __x_ABI_Ctest__component_CIArrayMethodCallbackVtbl
+    {
+        BEGIN_INTERFACE
+
+        HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_Ctest__component_CIArrayMethodCallback* This,
+            REFIID riid,
+            void** ppvObject);
+        ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_Ctest__component_CIArrayMethodCallback* This);
+        ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_Ctest__component_CIArrayMethodCallback* This);
+        HRESULT (STDMETHODCALLTYPE* Invoke)(__x_ABI_Ctest__component_CIArrayMethodCallback* This,
+        UINT32 valueLength,
+        INT32* value);
+
+        END_INTERFACE
+    } __x_ABI_Ctest__component_CIArrayMethodCallbackVtbl;
+
+    interface __x_ABI_Ctest__component_CIArrayMethodCallback
+    {
+        CONST_VTBL struct __x_ABI_Ctest__component_CIArrayMethodCallbackVtbl* lpVtbl;
+    };
+
+    
+    EXTERN_C const IID IID___x_ABI_Ctest__component_CIArrayMethodCallback;
+    #endif /* !defined(____x_ABI_Ctest__component_CIArrayMethodCallback_INTERFACE_DEFINED__) */
+    
 #if !defined(____x_ABI_Ctest__component_CIObjectHandler_INTERFACE_DEFINED__)
     #define ____x_ABI_Ctest__component_CIObjectHandler_INTERFACE_DEFINED__
     typedef struct __x_ABI_Ctest__component_CIObjectHandlerVtbl
@@ -2603,6 +2654,251 @@ struct __x_ABI_Ctest__component_CStructWithIReference
     
     EXTERN_C const IID IID___x_ABI_Ctest__component_CIVoidToVoidDelegate;
     #endif /* !defined(____x_ABI_Ctest__component_CIVoidToVoidDelegate_INTERFACE_DEFINED__) */
+    
+#if !defined(____x_ABI_Ctest__component_CIArrayMethodsStatics_INTERFACE_DEFINED__)
+    #define ____x_ABI_Ctest__component_CIArrayMethodsStatics_INTERFACE_DEFINED__
+    typedef struct __x_ABI_Ctest__component_CIArrayMethodsStaticsVtbl
+    {
+        BEGIN_INTERFACE
+
+        HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+            REFIID riid,
+            void** ppvObject);
+        ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This);
+        ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This);
+        HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+            ULONG* iidCount,
+            IID** iids);
+        HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+            HSTRING* className);
+        HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+            TrustLevel* trustLevel);
+        HRESULT (STDMETHODCALLTYPE* InInt32Array)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        INT32* value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* InStringArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        HSTRING* value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* InObjectArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        IInspectable** value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* InStringableArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        __x_ABI_CWindows_CFoundation_CIStringable** value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* InStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        struct __x_ABI_Ctest__component_CBlittableStruct* value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* InNonBlittableStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        struct __x_ABI_Ctest__component_CNonBlittableStruct* value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* InEnumArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        enum __x_ABI_Ctest__component_CSigned* value,
+        HSTRING* result);
+    HRESULT (STDMETHODCALLTYPE* OutInt32Array)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        INT32** value);
+    HRESULT (STDMETHODCALLTYPE* OutStringArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        HSTRING** value);
+    HRESULT (STDMETHODCALLTYPE* OutObjectArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        IInspectable*** value);
+    HRESULT (STDMETHODCALLTYPE* OutStringableArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        __x_ABI_CWindows_CFoundation_CIStringable*** value);
+    HRESULT (STDMETHODCALLTYPE* OutStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        struct __x_ABI_Ctest__component_CBlittableStruct** value);
+    HRESULT (STDMETHODCALLTYPE* OutNonBlittableStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        struct __x_ABI_Ctest__component_CNonBlittableStruct** value);
+    HRESULT (STDMETHODCALLTYPE* OutEnumArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* valueLength,
+        enum __x_ABI_Ctest__component_CSigned** value);
+    HRESULT (STDMETHODCALLTYPE* RefInt32Array)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        INT32* value);
+    HRESULT (STDMETHODCALLTYPE* RefStringArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        HSTRING* value);
+    HRESULT (STDMETHODCALLTYPE* RefObjectArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        IInspectable** value);
+    HRESULT (STDMETHODCALLTYPE* RefStringableArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        __x_ABI_CWindows_CFoundation_CIStringable** value);
+    HRESULT (STDMETHODCALLTYPE* RefStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        struct __x_ABI_Ctest__component_CBlittableStruct* value);
+    HRESULT (STDMETHODCALLTYPE* RefNonBlittableStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        struct __x_ABI_Ctest__component_CNonBlittableStruct* value);
+    HRESULT (STDMETHODCALLTYPE* RefEnumArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32 valueLength,
+        enum __x_ABI_Ctest__component_CSigned* value);
+    HRESULT (STDMETHODCALLTYPE* ReturnInt32Array)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        INT32** result);
+    HRESULT (STDMETHODCALLTYPE* ReturnStringArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        HSTRING** result);
+    HRESULT (STDMETHODCALLTYPE* ReturnObjectArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        IInspectable*** result);
+    HRESULT (STDMETHODCALLTYPE* ReturnStringableArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        __x_ABI_CWindows_CFoundation_CIStringable*** result);
+    HRESULT (STDMETHODCALLTYPE* ReturnStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        struct __x_ABI_Ctest__component_CBlittableStruct** result);
+    HRESULT (STDMETHODCALLTYPE* ReturnNonBlittableStructArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        struct __x_ABI_Ctest__component_CNonBlittableStruct** result);
+    HRESULT (STDMETHODCALLTYPE* ReturnEnumArray)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        UINT32* resultLength,
+        enum __x_ABI_Ctest__component_CSigned** result);
+    HRESULT (STDMETHODCALLTYPE* TestInArrayThroughSwiftImplementation)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        __x_ABI_Ctest__component_CIArrayScenarios* scenario,
+        UINT32 valueLength,
+        INT32* value);
+    HRESULT (STDMETHODCALLTYPE* TestOutArrayThroughSwiftImplementation)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        __x_ABI_Ctest__component_CIArrayScenarios* scenario,
+        __x_ABI_Ctest__component_CIArrayMethodCallback* callback);
+    HRESULT (STDMETHODCALLTYPE* TestRefArrayThroughSwiftImplementation)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        __x_ABI_Ctest__component_CIArrayScenarios* scenario,
+        UINT32 valueLength,
+        INT32* value,
+        __x_ABI_Ctest__component_CIArrayMethodCallback* callback);
+    HRESULT (STDMETHODCALLTYPE* TestReturnArrayThroughSwiftImplementation)(__x_ABI_Ctest__component_CIArrayMethodsStatics* This,
+        __x_ABI_Ctest__component_CIArrayScenarios* scenario,
+        __x_ABI_Ctest__component_CIArrayMethodCallback* callback);
+
+        END_INTERFACE
+    } __x_ABI_Ctest__component_CIArrayMethodsStaticsVtbl;
+
+    interface __x_ABI_Ctest__component_CIArrayMethodsStatics
+    {
+        CONST_VTBL struct __x_ABI_Ctest__component_CIArrayMethodsStaticsVtbl* lpVtbl;
+    };
+
+    
+    EXTERN_C const IID IID___x_ABI_Ctest__component_CIArrayMethodsStatics;
+#endif /* !defined(____x_ABI_Ctest__component_CIArrayMethodsStatics_INTERFACE_DEFINED__) */
+    
+#if !defined(____x_ABI_Ctest__component_CIArrayScenarios_INTERFACE_DEFINED__)
+    #define ____x_ABI_Ctest__component_CIArrayScenarios_INTERFACE_DEFINED__
+    typedef struct __x_ABI_Ctest__component_CIArrayScenariosVtbl
+    {
+        BEGIN_INTERFACE
+
+        HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+            REFIID riid,
+            void** ppvObject);
+        ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_Ctest__component_CIArrayScenarios* This);
+        ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_Ctest__component_CIArrayScenarios* This);
+        HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+            ULONG* iidCount,
+            IID** iids);
+        HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+            HSTRING* className);
+        HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+            TrustLevel* trustLevel);
+        HRESULT (STDMETHODCALLTYPE* InArray)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value);
+    HRESULT (STDMETHODCALLTYPE* OutArray)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32* valueLength,
+        INT32** value);
+    HRESULT (STDMETHODCALLTYPE* RefArray)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value);
+    HRESULT (STDMETHODCALLTYPE* ReturnArray)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32* resultLength,
+        INT32** result);
+    HRESULT (STDMETHODCALLTYPE* get_ArrayProperty)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32* valueLength,
+        INT32** value);
+    HRESULT (STDMETHODCALLTYPE* put_ArrayProperty)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value);
+    HRESULT (STDMETHODCALLTYPE* DoubleIn)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 value1Length,
+        INT32* value1,
+        UINT32 value2Length,
+        INT32* value2);
+    HRESULT (STDMETHODCALLTYPE* InAndOut)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value,
+        UINT32* resultsLength,
+        INT32** results);
+    HRESULT (STDMETHODCALLTYPE* InAndRef)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value,
+        UINT32 resultsLength,
+        INT32* results);
+    HRESULT (STDMETHODCALLTYPE* InAndRefNonBlittable)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value,
+        UINT32 resultsLength,
+        boolean* results);
+    HRESULT (STDMETHODCALLTYPE* InAndReturn)(__x_ABI_Ctest__component_CIArrayScenarios* This,
+        UINT32 valueLength,
+        INT32* value,
+        UINT32* resultLength,
+        INT32** result);
+
+        END_INTERFACE
+    } __x_ABI_Ctest__component_CIArrayScenariosVtbl;
+
+    interface __x_ABI_Ctest__component_CIArrayScenarios
+    {
+        CONST_VTBL struct __x_ABI_Ctest__component_CIArrayScenariosVtbl* lpVtbl;
+    };
+
+    
+    EXTERN_C const IID IID___x_ABI_Ctest__component_CIArrayScenarios;
+#endif /* !defined(____x_ABI_Ctest__component_CIArrayScenarios_INTERFACE_DEFINED__) */
+    
+#if !defined(____x_ABI_Ctest__component_CIArrayShouldBuild_INTERFACE_DEFINED__)
+    #define ____x_ABI_Ctest__component_CIArrayShouldBuild_INTERFACE_DEFINED__
+    typedef struct __x_ABI_Ctest__component_CIArrayShouldBuildVtbl
+    {
+        BEGIN_INTERFACE
+
+        HRESULT (STDMETHODCALLTYPE* QueryInterface)(__x_ABI_Ctest__component_CIArrayShouldBuild* This,
+            REFIID riid,
+            void** ppvObject);
+        ULONG (STDMETHODCALLTYPE* AddRef)(__x_ABI_Ctest__component_CIArrayShouldBuild* This);
+        ULONG (STDMETHODCALLTYPE* Release)(__x_ABI_Ctest__component_CIArrayShouldBuild* This);
+        HRESULT (STDMETHODCALLTYPE* GetIids)(__x_ABI_Ctest__component_CIArrayShouldBuild* This,
+            ULONG* iidCount,
+            IID** iids);
+        HRESULT (STDMETHODCALLTYPE* GetRuntimeClassName)(__x_ABI_Ctest__component_CIArrayShouldBuild* This,
+            HSTRING* className);
+        HRESULT (STDMETHODCALLTYPE* GetTrustLevel)(__x_ABI_Ctest__component_CIArrayShouldBuild* This,
+            TrustLevel* trustLevel);
+        HRESULT (STDMETHODCALLTYPE* get_Scenarios)(__x_ABI_Ctest__component_CIArrayShouldBuild* This,
+        UINT32* valueLength,
+        __x_ABI_Ctest__component_CIArrayScenarios*** value);
+
+        END_INTERFACE
+    } __x_ABI_Ctest__component_CIArrayShouldBuildVtbl;
+
+    interface __x_ABI_Ctest__component_CIArrayShouldBuild
+    {
+        CONST_VTBL struct __x_ABI_Ctest__component_CIArrayShouldBuildVtbl* lpVtbl;
+    };
+
+    
+    EXTERN_C const IID IID___x_ABI_Ctest__component_CIArrayShouldBuild;
+#endif /* !defined(____x_ABI_Ctest__component_CIArrayShouldBuild_INTERFACE_DEFINED__) */
     
 #if !defined(____x_ABI_Ctest__component_CIAsyncMethodsStatics_INTERFACE_DEFINED__)
     #define ____x_ABI_Ctest__component_CIAsyncMethodsStatics_INTERFACE_DEFINED__

@@ -191,4 +191,95 @@ public enum __IMPL_Windows_Storage_Search {
 
     }
 
+    public enum QueryOptionsBridge: AbiBridge {
+        public typealias SwiftProjection = QueryOptions
+        public typealias CABI = __x_ABI_CWindows_CStorage_CSearch_CIQueryOptions
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIQueryOptions>?) -> QueryOptions? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageFileQueryResultBridge: AbiBridge {
+        public typealias SwiftProjection = StorageFileQueryResult
+        public typealias CABI = __x_ABI_CWindows_CStorage_CSearch_CIStorageFileQueryResult
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIStorageFileQueryResult>?) -> StorageFileQueryResult? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageFolderQueryResultBridge: AbiBridge {
+        public typealias SwiftProjection = StorageFolderQueryResult
+        public typealias CABI = __x_ABI_CWindows_CStorage_CSearch_CIStorageFolderQueryResult
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIStorageFolderQueryResult>?) -> StorageFolderQueryResult? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageItemQueryResultBridge: AbiBridge {
+        public typealias SwiftProjection = StorageItemQueryResult
+        public typealias CABI = __x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CSearch_CIStorageItemQueryResult>?) -> StorageItemQueryResult? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+}
+@_spi(WinRTInternal)
+extension SortEntry: WinRTBridgeable {
+    public typealias ABI = __x_ABI_CWindows_CStorage_CSearch_CSortEntry
+    public static func from(abi: ABI) -> Self {
+        .init(propertyName: .init(from: abi.PropertyName), ascendingOrder: .init(from: abi.AscendingOrder))
+    }
+    public func toABI() -> ABI {
+        __ABI_Windows_Storage_Search._ABI_SortEntry(from: self).detach()
+    }
+}
+
+@_spi(WinRTInternal)
+public class IStorageFolderQueryOperationsMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageFolderQueryOperations
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage_Search.IStorageFolderQueryOperations = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage_Search.IStorageFolderQueryOperationsBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageQueryResultBaseMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageQueryResultBase
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage_Search.IStorageQueryResultBase = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage_Search.IStorageQueryResultBaseBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class QueryOptionsMaker: MakeFromAbi {
+    public typealias SwiftType = QueryOptions
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return QueryOptions(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageFileQueryResultMaker: MakeFromAbi {
+    public typealias SwiftType = StorageFileQueryResult
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageFileQueryResult(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageFolderQueryResultMaker: MakeFromAbi {
+    public typealias SwiftType = StorageFolderQueryResult
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageFolderQueryResult(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageItemQueryResultMaker: MakeFromAbi {
+    public typealias SwiftType = StorageItemQueryResult
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageItemQueryResult(fromAbi: abi)
+    }
 }

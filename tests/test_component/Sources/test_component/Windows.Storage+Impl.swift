@@ -781,4 +781,220 @@ public enum __IMPL_Windows_Storage {
             return handler
         }
     }
+    public enum StorageFileBridge: AbiBridge {
+        public typealias SwiftProjection = StorageFile
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageFile
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageFile>?) -> StorageFile? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageFolderBridge: AbiBridge {
+        public typealias SwiftProjection = StorageFolder
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageFolder
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageFolder>?) -> StorageFolder? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageLibraryChangeBridge: AbiBridge {
+        public typealias SwiftProjection = StorageLibraryChange
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageLibraryChange
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageLibraryChange>?) -> StorageLibraryChange? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageLibraryChangeReaderBridge: AbiBridge {
+        public typealias SwiftProjection = StorageLibraryChangeReader
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageLibraryChangeReader
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageLibraryChangeReader>?) -> StorageLibraryChangeReader? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageLibraryChangeTrackerBridge: AbiBridge {
+        public typealias SwiftProjection = StorageLibraryChangeTracker
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker>?) -> StorageLibraryChangeTracker? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageProviderBridge: AbiBridge {
+        public typealias SwiftProjection = StorageProvider
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageProvider
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageProvider>?) -> StorageProvider? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StorageStreamTransactionBridge: AbiBridge {
+        public typealias SwiftProjection = StorageStreamTransaction
+        public typealias CABI = __x_ABI_CWindows_CStorage_CIStorageStreamTransaction
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageStreamTransaction>?) -> StorageStreamTransaction? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StreamedFileDataRequestBridge: AbiBridge {
+        public typealias SwiftProjection = StreamedFileDataRequest
+        public typealias CABI = __x_ABI_CWindows_CStorage_CStreams_CIOutputStream
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CStreams_CIOutputStream>?) -> StreamedFileDataRequest? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+}
+@_spi(WinRTInternal)
+public class IStorageFileMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageFile
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageFile = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageFileBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageFile2Maker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageFile2
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageFile2 = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageFile2Bridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageFilePropertiesWithAvailabilityMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageFilePropertiesWithAvailability
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageFilePropertiesWithAvailability = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageFilePropertiesWithAvailabilityBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageFolderMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageFolder
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageFolder = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageFolderBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageFolder2Maker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageFolder2
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageFolder2 = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageFolder2Bridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageItemMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageItem
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageItem = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageItemBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageItem2Maker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageItem2
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageItem2 = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageItem2Bridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageItemPropertiesMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageItemProperties
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageItemProperties = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageItemPropertiesBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageItemProperties2Maker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageItemProperties2
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageItemProperties2 = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageItemProperties2Bridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStorageItemPropertiesWithProviderMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStorageItemPropertiesWithProvider
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStorageItemPropertiesWithProvider = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStorageItemPropertiesWithProviderBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IStreamedFileDataRequestMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIStreamedFileDataRequest
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Storage.IStreamedFileDataRequest = try! abi.QueryInterface()
+        return __IMPL_Windows_Storage.IStreamedFileDataRequestBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class StorageFileMaker: MakeFromAbi {
+    public typealias SwiftType = StorageFile
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageFile(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageFolderMaker: MakeFromAbi {
+    public typealias SwiftType = StorageFolder
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageFolder(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageLibraryChangeMaker: MakeFromAbi {
+    public typealias SwiftType = StorageLibraryChange
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageLibraryChange(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageLibraryChangeReaderMaker: MakeFromAbi {
+    public typealias SwiftType = StorageLibraryChangeReader
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageLibraryChangeReader(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageLibraryChangeTrackerMaker: MakeFromAbi {
+    public typealias SwiftType = StorageLibraryChangeTracker
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageLibraryChangeTracker(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageProviderMaker: MakeFromAbi {
+    public typealias SwiftType = StorageProvider
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageProvider(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StorageStreamTransactionMaker: MakeFromAbi {
+    public typealias SwiftType = StorageStreamTransaction
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StorageStreamTransaction(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StreamedFileDataRequestMaker: MakeFromAbi {
+    public typealias SwiftType = StreamedFileDataRequest
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StreamedFileDataRequest(fromAbi: abi)
+    }
 }

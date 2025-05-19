@@ -8,6 +8,138 @@ public typealias Keywords = __x_ABI_Ctest__component_CKeywords
 public typealias Signed = __x_ABI_Ctest__component_CSigned
 public typealias SwiftifiableNames = __x_ABI_Ctest__component_CSwiftifiableNames
 public typealias Unsigned = __x_ABI_Ctest__component_CUnsigned
+public final class ArrayMethods {
+    private static let _IArrayMethodsStatics: __ABI_test_component.IArrayMethodsStatics = try! RoGetActivationFactory("test_component.ArrayMethods")
+    public static func inInt32Array(_ value: [Int32]) throws -> String {
+        return try _IArrayMethodsStatics.InInt32Array(value)
+    }
+
+    public static func inStringArray(_ value: [String]) throws -> String {
+        return try _IArrayMethodsStatics.InStringArray(value)
+    }
+
+    public static func inObjectArray(_ value: [Any?]) throws -> String {
+        return try _IArrayMethodsStatics.InObjectArray(value)
+    }
+
+    public static func inStringableArray(_ value: [test_component.AnyIStringable?]) throws -> String {
+        return try _IArrayMethodsStatics.InStringableArray(value)
+    }
+
+    public static func inStructArray(_ value: [BlittableStruct]) throws -> String {
+        return try _IArrayMethodsStatics.InStructArray(value)
+    }
+
+    public static func inNonBlittableStructArray(_ value: [NonBlittableStruct]) throws -> String {
+        return try _IArrayMethodsStatics.InNonBlittableStructArray(value)
+    }
+
+    public static func inEnumArray(_ value: [Signed]) throws -> String {
+        return try _IArrayMethodsStatics.InEnumArray(value)
+    }
+
+    public static func outInt32Array(_ value: inout [Int32]) throws {
+        try _IArrayMethodsStatics.OutInt32Array(&value)
+    }
+
+    public static func outStringArray(_ value: inout [String]) throws {
+        try _IArrayMethodsStatics.OutStringArray(&value)
+    }
+
+    public static func outObjectArray(_ value: inout [Any?]) throws {
+        try _IArrayMethodsStatics.OutObjectArray(&value)
+    }
+
+    public static func outStringableArray(_ value: inout [test_component.AnyIStringable?]) throws {
+        try _IArrayMethodsStatics.OutStringableArray(&value)
+    }
+
+    public static func outStructArray(_ value: inout [BlittableStruct]) throws {
+        try _IArrayMethodsStatics.OutStructArray(&value)
+    }
+
+    public static func outNonBlittableStructArray(_ value: inout [NonBlittableStruct]) throws {
+        try _IArrayMethodsStatics.OutNonBlittableStructArray(&value)
+    }
+
+    public static func outEnumArray(_ value: inout [Signed]) throws {
+        try _IArrayMethodsStatics.OutEnumArray(&value)
+    }
+
+    public static func refInt32Array(_ value: inout [Int32]) throws {
+        try _IArrayMethodsStatics.RefInt32Array(&value)
+    }
+
+    public static func refStringArray(_ value: inout [String]) throws {
+        try _IArrayMethodsStatics.RefStringArray(&value)
+    }
+
+    public static func refObjectArray(_ value: inout [Any?]) throws {
+        try _IArrayMethodsStatics.RefObjectArray(&value)
+    }
+
+    public static func refStringableArray(_ value: inout [test_component.AnyIStringable?]) throws {
+        try _IArrayMethodsStatics.RefStringableArray(&value)
+    }
+
+    public static func refStructArray(_ value: inout [BlittableStruct]) throws {
+        try _IArrayMethodsStatics.RefStructArray(&value)
+    }
+
+    public static func refNonBlittableStructArray(_ value: inout [NonBlittableStruct]) throws {
+        try _IArrayMethodsStatics.RefNonBlittableStructArray(&value)
+    }
+
+    public static func refEnumArray(_ value: inout [Signed]) throws {
+        try _IArrayMethodsStatics.RefEnumArray(&value)
+    }
+
+    public static func returnInt32Array() throws -> [Int32] {
+        return try _IArrayMethodsStatics.ReturnInt32Array()
+    }
+
+    public static func returnStringArray() throws -> [String] {
+        return try _IArrayMethodsStatics.ReturnStringArray()
+    }
+
+    public static func returnObjectArray() throws -> [Any?] {
+        return try _IArrayMethodsStatics.ReturnObjectArray()
+    }
+
+    public static func returnStringableArray() throws -> [test_component.AnyIStringable?] {
+        return try _IArrayMethodsStatics.ReturnStringableArray()
+    }
+
+    public static func returnStructArray() throws -> [BlittableStruct] {
+        return try _IArrayMethodsStatics.ReturnStructArray()
+    }
+
+    public static func returnNonBlittableStructArray() throws -> [NonBlittableStruct] {
+        return try _IArrayMethodsStatics.ReturnNonBlittableStructArray()
+    }
+
+    public static func returnEnumArray() throws -> [Signed] {
+        return try _IArrayMethodsStatics.ReturnEnumArray()
+    }
+
+    public static func testInArrayThroughSwiftImplementation(_ scenario: AnyIArrayScenarios!, _ value: [Int32]) throws {
+        try _IArrayMethodsStatics.TestInArrayThroughSwiftImplementation(scenario, value)
+    }
+
+    public static func testOutArrayThroughSwiftImplementation(_ scenario: AnyIArrayScenarios!, _ callback: ArrayMethodCallback!) throws {
+        try _IArrayMethodsStatics.TestOutArrayThroughSwiftImplementation(scenario, callback)
+    }
+
+    public static func testRefArrayThroughSwiftImplementation(_ scenario: AnyIArrayScenarios!, _ value: inout [Int32], _ callback: ArrayMethodCallback!) throws {
+        try _IArrayMethodsStatics.TestRefArrayThroughSwiftImplementation(scenario, &value, callback)
+    }
+
+    public static func testReturnArrayThroughSwiftImplementation(_ scenario: AnyIArrayScenarios!, _ callback: ArrayMethodCallback!) throws {
+        try _IArrayMethodsStatics.TestReturnArrayThroughSwiftImplementation(scenario, callback)
+    }
+
+}
+
 public final class AsyncMethods {
     private static let _IAsyncMethodsStatics: __ABI_test_component.IAsyncMethodsStatics = try! RoGetActivationFactory("test_component.AsyncMethods")
     public static func getCompletedAsync(_ result: Int32) throws -> AnyIAsyncOperation<Int32>! {
@@ -35,12 +167,6 @@ public final class AsyncOperationInt : WinRTClass, IAsyncOperationInt, IAsyncOpe
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIAsyncOperationInt>?) -> AsyncOperationInt? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -110,12 +236,6 @@ open class Base : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIBase>?) -> Base? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -140,7 +260,7 @@ open class Base : WinRTClass {
 
     override public init() {
         super.init()
-        MakeComposed(composing: Self.Composable.self, self) { baseInterface, innerInterface in 
+        MakeComposed(composing: __IMPL_test_component.BaseBridge.Composable.self, self) { baseInterface, innerInterface in 
             try! Self._IBaseProtectedFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
@@ -159,19 +279,6 @@ open class Base : WinRTClass {
         try _IBaseOverrides.OnDoTheThing()
     }
 
-    @_spi(WinRTInternal)
-        public enum IBaseOverrides : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIBaseOverrides
-        public typealias SwiftABI = __ABI_test_component.IBaseOverrides
-        public typealias Class = Base
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIBase
-            public typealias SwiftABI = __ABI_test_component.IBase
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IBaseOverrides
     deinit {
         _default = nil
         _IBaseOverrides = nil
@@ -189,12 +296,6 @@ open class BaseCollection : WinRTClass, IVector, IIterable {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_C__FIVector_1___x_ABI_Ctest__zcomponent__CBase>?) -> BaseCollection? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
     }
 
     @_spi(WinRTInternal)
@@ -217,7 +318,7 @@ open class BaseCollection : WinRTClass, IVector, IIterable {
 
     override public init() {
         super.init()
-        MakeComposed(composing: Self.Composable.self, self) { baseInterface, innerInterface in 
+        MakeComposed(composing: __IMPL_test_component.BaseCollectionBridge.Composable.self, self) { baseInterface, innerInterface in 
             try! Self._IBaseCollectionProtectedFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
@@ -289,6 +390,14 @@ open class BaseCollection : WinRTClass, IVector, IIterable {
         try! _default.Clear()
     }
 
+    public func getMany(_ startIndex: UInt32, _ items: inout [Base?]) -> UInt32 {
+        try! _default.GetMany(startIndex, &items)
+    }
+
+    public func replaceAll(_ items: [Base?]) {
+        try! _default.ReplaceAll(items)
+    }
+
     public var size : UInt32 {
         get { try! _default.get_Size() }
     }
@@ -298,19 +407,6 @@ open class BaseCollection : WinRTClass, IVector, IIterable {
         try! _IIterable.First()
     }
 
-    @_spi(WinRTInternal)
-        public enum IVectorBase : ComposableImpl {
-        public typealias CABI = C_IInspectable
-        public typealias SwiftABI = test_component.IInspectable
-        public typealias Class = BaseCollection
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_C__FIVector_1___x_ABI_Ctest__zcomponent__CBase
-            public typealias SwiftABI = test_component.IVectorBase
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IVectorBase
     deinit {
         _default = nil
         _IIterable = nil
@@ -330,12 +426,6 @@ public final class BaseMapCollection : WinRTClass, IMap, IIterable {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_C__FIMap_2_HSTRING___x_ABI_Ctest__zcomponent__CBase>?) -> BaseMapCollection? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -398,12 +488,6 @@ open class BaseNoOverrides : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIBaseNoOverrides>?) -> BaseNoOverrides? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -423,7 +507,7 @@ open class BaseNoOverrides : WinRTClass {
 
     override public init() {
         super.init()
-        MakeComposed(composing: Self.Composable.self, self) { baseInterface, innerInterface in 
+        MakeComposed(composing: __IMPL_test_component.BaseNoOverridesBridge.Composable.self, self) { baseInterface, innerInterface in 
             try! Self._IBaseNoOverridesProtectedFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
@@ -433,19 +517,6 @@ open class BaseNoOverrides : WinRTClass {
         return try _IBaseNoOverridesStatics.CreateFromString(value)
     }
 
-    @_spi(WinRTInternal)
-        public enum IBaseNoOverrides : ComposableImpl {
-        public typealias CABI = C_IInspectable
-        public typealias SwiftABI = test_component.IInspectable
-        public typealias Class = BaseNoOverrides
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIBaseNoOverrides
-            public typealias SwiftABI = __ABI_test_component.IBaseNoOverrides
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IBaseNoOverrides
     deinit {
         _default = nil
     }
@@ -462,12 +533,6 @@ public final class BaseObservableCollection : WinRTClass, IObservableVector, IVe
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_C__FIObservableVector_1___x_ABI_Ctest__zcomponent__CBase>?) -> BaseObservableCollection? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -558,6 +623,14 @@ public final class BaseObservableCollection : WinRTClass, IObservableVector, IVe
         try! _IVector.Clear()
     }
 
+    public func getMany(_ startIndex: UInt32, _ items: inout [Base?]) -> UInt32 {
+        try! _IVector.GetMany(startIndex, &items)
+    }
+
+    public func replaceAll(_ items: [Base?]) {
+        try! _IVector.ReplaceAll(items)
+    }
+
     public var size : UInt32 {
         get { try! _IVector.get_Size() }
     }
@@ -592,12 +665,6 @@ public final class Class : WinRTClass, IBasic {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIClass>?) -> Class? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -832,12 +899,6 @@ public final class CollectionTester : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CICollectionTester>?) -> CollectionTester? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -898,12 +959,6 @@ public final class DeferrableEventArgs : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIDeferrableEventArgs>?) -> DeferrableEventArgs? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -934,12 +989,6 @@ public final class Derived : test_component.Base {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIDerived>?) -> Derived? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     override public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi: fromAbi)
     }
@@ -959,19 +1008,6 @@ public final class Derived : test_component.Base {
         set { try! _default.put_Prop(newValue) }
     }
 
-    @_spi(WinRTInternal)
-        public enum IBaseOverrides : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIBaseOverrides
-        public typealias SwiftABI = __ABI_test_component.IBaseOverrides
-        public typealias Class = Derived
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIDerived
-            public typealias SwiftABI = __ABI_test_component.IDerived
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IBaseOverrides
     deinit {
         _default = nil
     }
@@ -990,12 +1026,6 @@ public final class DerivedFromNoConstructor : test_component.UnsealedDerivedNoCo
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIDerivedFromNoConstructor>?) -> DerivedFromNoConstructor? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     override public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi: fromAbi)
     }
@@ -1004,19 +1034,6 @@ public final class DerivedFromNoConstructor : test_component.UnsealedDerivedNoCo
         try _default.Method()
     }
 
-    @_spi(WinRTInternal)
-        public enum IBaseOverrides : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIBaseOverrides
-        public typealias SwiftABI = __ABI_test_component.IBaseOverrides
-        public typealias Class = DerivedFromNoConstructor
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIDerivedFromNoConstructor
-            public typealias SwiftABI = __ABI_test_component.IDerivedFromNoConstructor
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IBaseOverrides
     deinit {
         _default = nil
     }
@@ -1032,12 +1049,6 @@ public final class EventTester : WinRTClass {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIEventTester>?) -> EventTester? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -1081,12 +1092,6 @@ public final class NoopClosable : WinRTClass, test_component.IClosable {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CIClosable>?) -> NoopClosable? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -1165,12 +1170,6 @@ public final class Simple : WinRTClass {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CISimple>?) -> Simple? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -1334,12 +1333,6 @@ open class UnsealedDerived : test_component.Base {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIUnsealedDerived>?) -> UnsealedDerived? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
-    }
-
-    @_spi(WinRTInternal)
     override public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi: fromAbi)
     }
@@ -1365,19 +1358,19 @@ open class UnsealedDerived : test_component.Base {
     private static var _IUnsealedDerivedFactory : __ABI_test_component.IUnsealedDerivedFactory =  try! RoGetActivationFactory("test_component.UnsealedDerived")
 
     override public init() {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerivedBridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerivedFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
 
     public init(_ prop: Int32) {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerivedBridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerivedFactory.CreateInstance2(prop, baseInterface, &innerInterface)
         }
     }
 
     public init(_ prop1: String, _ prop2: Base!) {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerivedBridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerivedFactory.CreateInstance3(prop1, prop2, baseInterface, &innerInterface)
         }
     }
@@ -1392,35 +1385,11 @@ open class UnsealedDerived : test_component.Base {
         try _IUnsealedDerivedOverloads2.OnAfterDoTheThing()
     }
 
-    @_spi(WinRTInternal)
-        public enum IUnsealedDerivedOverloads2 : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerivedOverloads2
-        public typealias SwiftABI = __ABI_test_component.IUnsealedDerivedOverloads2
-        public typealias Class = UnsealedDerived
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerived
-            public typealias SwiftABI = __ABI_test_component.IUnsealedDerived
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IUnsealedDerivedOverloads2
     private lazy var _IUnsealedDerivedOverrides: __ABI_test_component.IUnsealedDerivedOverrides! = getInterfaceForCaching()
     open func onBeforeDoTheThing() throws {
         try _IUnsealedDerivedOverrides.OnBeforeDoTheThing()
     }
 
-    @_spi(WinRTInternal)
-        public enum IUnsealedDerivedOverrides : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerivedOverrides
-        public typealias SwiftABI = __ABI_test_component.IUnsealedDerivedOverrides
-        public typealias Class = UnsealedDerived
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerived
-            public typealias SwiftABI = __ABI_test_component.IUnsealedDerived
-        }
-    }
     deinit {
         _default = nil
         _IUnsealedDerivedOverloads2 = nil
@@ -1441,12 +1410,6 @@ open class UnsealedDerived2 : test_component.UnsealedDerived {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIUnsealedDerived2>?) -> UnsealedDerived2? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
-    }
-
-    @_spi(WinRTInternal)
     override public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi: fromAbi)
     }
@@ -1464,7 +1427,7 @@ open class UnsealedDerived2 : test_component.UnsealedDerived {
     private static var _IUnsealedDerived2Factory : __ABI_test_component.IUnsealedDerived2Factory =  try! RoGetActivationFactory("test_component.UnsealedDerived2")
 
     override public init(_ prop: Int32) {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerived2Bridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerived2Factory.CreateInstance(prop, baseInterface, &innerInterface)
         }
     }
@@ -1472,7 +1435,7 @@ open class UnsealedDerived2 : test_component.UnsealedDerived {
     private static var _IUnsealedDerived2ProtectedFactory : __ABI_test_component.IUnsealedDerived2ProtectedFactory =  try! RoGetActivationFactory("test_component.UnsealedDerived2")
 
     override public init() {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerived2Bridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerived2ProtectedFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
@@ -1481,19 +1444,6 @@ open class UnsealedDerived2 : test_component.UnsealedDerived {
         try _default.Method()
     }
 
-    @_spi(WinRTInternal)
-        public enum IUnsealedDerivedOverloads2 : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerivedOverloads2
-        public typealias SwiftABI = __ABI_test_component.IUnsealedDerivedOverloads2
-        public typealias Class = UnsealedDerived2
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerived2
-            public typealias SwiftABI = __ABI_test_component.IUnsealedDerived2
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IUnsealedDerivedOverloads2
     deinit {
         _default = nil
     }
@@ -1509,12 +1459,6 @@ open class UnsealedDerivedFromNoConstructor : test_component.UnsealedDerivedNoCo
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIUnsealedDerivedFromNoConstructor>?) -> UnsealedDerivedFromNoConstructor? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
     }
 
     @_spi(WinRTInternal)
@@ -1535,24 +1479,11 @@ open class UnsealedDerivedFromNoConstructor : test_component.UnsealedDerivedNoCo
     private static var _IUnsealedDerivedFromNoConstructorFactory : __ABI_test_component.IUnsealedDerivedFromNoConstructorFactory =  try! RoGetActivationFactory("test_component.UnsealedDerivedFromNoConstructor")
 
     public init() {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerivedFromNoConstructorBridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerivedFromNoConstructorFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
 
-    @_spi(WinRTInternal)
-        public enum IBaseOverrides : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIBaseOverrides
-        public typealias SwiftABI = __ABI_test_component.IBaseOverrides
-        public typealias Class = UnsealedDerivedFromNoConstructor
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerivedFromNoConstructor
-            public typealias SwiftABI = __ABI_test_component.IUnsealedDerivedFromNoConstructor
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IBaseOverrides
     deinit {
         _default = nil
     }
@@ -1568,12 +1499,6 @@ open class UnsealedDerivedNoConstructor : test_component.Base {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIUnsealedDerivedNoConstructor>?) -> UnsealedDerivedNoConstructor? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
     }
 
     @_spi(WinRTInternal)
@@ -1593,19 +1518,6 @@ open class UnsealedDerivedNoConstructor : test_component.Base {
     }
     private static var _IUnsealedDerivedNoConstructorFactory : __ABI_test_component.IUnsealedDerivedNoConstructorFactory =  try! RoGetActivationFactory("test_component.UnsealedDerivedNoConstructor")
 
-    @_spi(WinRTInternal)
-        public enum IBaseOverrides : ComposableImpl {
-        public typealias CABI = __x_ABI_Ctest__component_CIBaseOverrides
-        public typealias SwiftABI = __ABI_test_component.IBaseOverrides
-        public typealias Class = UnsealedDerivedNoConstructor
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerivedNoConstructor
-            public typealias SwiftABI = __ABI_test_component.IUnsealedDerivedNoConstructor
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IBaseOverrides
     deinit {
         _default = nil
     }
@@ -1621,12 +1533,6 @@ open class UnsealedDerivedNoOverrides : test_component.BaseNoOverrides {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIUnsealedDerivedNoOverrides>?) -> UnsealedDerivedNoOverrides? {
-        guard let abi = abi else { return nil }
-        return UnsealedWinRTClassWrapper<Composable>.unwrapFrom(base: abi)
     }
 
     @_spi(WinRTInternal)
@@ -1647,24 +1553,11 @@ open class UnsealedDerivedNoOverrides : test_component.BaseNoOverrides {
     private static var _IUnsealedDerivedNoOverridesProtectedFactory : __ABI_test_component.IUnsealedDerivedNoOverridesProtectedFactory =  try! RoGetActivationFactory("test_component.UnsealedDerivedNoOverrides")
 
     override public init() {
-        super.init(composing: Self.Composable.self) { baseInterface, innerInterface in 
+        super.init(composing: __IMPL_test_component.UnsealedDerivedNoOverridesBridge.Composable.self) { baseInterface, innerInterface in 
             try! Self._IUnsealedDerivedNoOverridesProtectedFactory.CreateInstance(baseInterface, &innerInterface)
         }
     }
 
-    @_spi(WinRTInternal)
-        public enum IUnsealedDerivedNoOverrides : ComposableImpl {
-        public typealias CABI = C_IInspectable
-        public typealias SwiftABI = test_component.IInspectable
-        public typealias Class = UnsealedDerivedNoOverrides
-        public typealias SwiftProjection = WinRTClassWeakReference<Class>
-        public enum Default : AbiInterface {
-            public typealias CABI = __x_ABI_Ctest__component_CIUnsealedDerivedNoOverrides
-            public typealias SwiftABI = __ABI_test_component.IUnsealedDerivedNoOverrides
-        }
-    }
-    @_spi(WinRTInternal)
-    public typealias Composable = IUnsealedDerivedNoOverrides
     deinit {
         _default = nil
     }
@@ -1680,12 +1573,6 @@ public final class WeakReferencer : WinRTClass {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_Ctest__component_CIWeakReferencer>?) -> WeakReferencer? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -1707,6 +1594,7 @@ public final class WeakReferencer : WinRTClass {
     }
 }
 
+public typealias ArrayMethodCallback = ([Int32]) throws -> ()
 public typealias ObjectHandler = (Any?) throws -> ()
 public typealias VoidToVoidDelegate = () throws -> ()
 public struct BlittableStruct: Hashable, Codable, Sendable {
@@ -1716,9 +1604,6 @@ public struct BlittableStruct: Hashable, Codable, Sendable {
     public init(first: Int32, second: Int32) {
         self.first = first
         self.second = second
-    }
-    public static func from(abi: __x_ABI_Ctest__component_CBlittableStruct) -> BlittableStruct {
-        .init(first: abi.First, second: abi.Second)
     }
 }
 
@@ -1734,9 +1619,6 @@ public struct NonBlittableBoolStruct: Hashable, Codable, Sendable {
         self.third = third
         self.fourth = fourth
     }
-    public static func from(abi: __x_ABI_Ctest__component_CNonBlittableBoolStruct) -> NonBlittableBoolStruct {
-        .init(first: .init(from: abi.First), second: .init(from: abi.Second), third: .init(from: abi.Third), fourth: .init(from: abi.Fourth))
-    }
 }
 
 public struct NonBlittableStruct: Hashable, Codable, Sendable {
@@ -1751,9 +1633,6 @@ public struct NonBlittableStruct: Hashable, Codable, Sendable {
         self.third = third
         self.fourth = fourth
     }
-    public static func from(abi: __x_ABI_Ctest__component_CNonBlittableStruct) -> NonBlittableStruct {
-        .init(first: .init(from: abi.First), second: .init(from: abi.Second), third: abi.Third, fourth: .init(from: abi.Fourth))
-    }
 }
 
 public struct SimpleEventArgs: Hashable, Codable, Sendable {
@@ -1762,9 +1641,6 @@ public struct SimpleEventArgs: Hashable, Codable, Sendable {
     public init(value: Int32) {
         self.value = value
     }
-    public static func from(abi: __x_ABI_Ctest__component_CSimpleEventArgs) -> SimpleEventArgs {
-        .init(value: abi.Value)
-    }
 }
 
 public struct StructWithEnum: Hashable, Codable, Sendable {
@@ -1772,9 +1648,6 @@ public struct StructWithEnum: Hashable, Codable, Sendable {
     public init() {}
     public init(names: SwiftifiableNames) {
         self.names = names
-    }
-    public static func from(abi: __x_ABI_Ctest__component_CStructWithEnum) -> StructWithEnum {
-        .init(names: abi.Names)
     }
 }
 
@@ -1786,10 +1659,48 @@ public struct StructWithIReference: Hashable, Codable, Sendable {
         self.value1 = value1
         self.value2 = value2
     }
-    public static func from(abi: __x_ABI_Ctest__component_CStructWithIReference) -> StructWithIReference {
-        .init(value1: test_component.__x_ABI_C__FIReference_1_intWrapper.unwrapFrom(abi: ComPtr(abi.Value1)), value2: test_component.__x_ABI_C__FIReference_1_intWrapper.unwrapFrom(abi: ComPtr(abi.Value2)))
+}
+
+public protocol IArrayScenarios : WinRTInterface {
+    func inArray(_ value: [Int32]) throws
+    func outArray(_ value: inout [Int32]) throws
+    func refArray(_ value: inout [Int32]) throws
+    func returnArray() throws -> [Int32]
+    func doubleIn(_ value1: [Int32], _ value2: [Int32]) throws
+    func inAndOut(_ value: [Int32], _ results: inout [Int32]) throws
+    func inAndRef(_ value: [Int32], _ results: inout [Int32]) throws
+    func inAndRefNonBlittable(_ value: [Int32], _ results: inout [Bool]) throws
+    func inAndReturn(_ value: [Int32]) throws -> [Int32]
+    var arrayProperty: [Int32] { get set }
+}
+
+extension IArrayScenarios {
+    public func queryInterface(_ iid: test_component.IID) -> IUnknownRef? {
+        switch iid {
+            case __ABI_test_component.IArrayScenariosWrapper.IID:
+                let wrapper = __ABI_test_component.IArrayScenariosWrapper(self)
+                return wrapper!.queryInterface(iid)
+            default: return nil
+        }
     }
 }
+public typealias AnyIArrayScenarios = any IArrayScenarios
+
+public protocol IArrayShouldBuild : WinRTInterface {
+    var scenarios: [test_component.AnyIArrayScenarios?] { get }
+}
+
+extension IArrayShouldBuild {
+    public func queryInterface(_ iid: test_component.IID) -> IUnknownRef? {
+        switch iid {
+            case __ABI_test_component.IArrayShouldBuildWrapper.IID:
+                let wrapper = __ABI_test_component.IArrayShouldBuildWrapper(self)
+                return wrapper!.queryInterface(iid)
+            default: return nil
+        }
+    }
+}
+public typealias AnyIArrayShouldBuild = any IArrayShouldBuild
 
 public protocol IAsyncMethodsWithProgress : WinRTInterface {
     func operationWithProgress(_ value: test_component.DateTime) throws -> test_component.AnyIAsyncOperationWithProgress<Int32, Double>!

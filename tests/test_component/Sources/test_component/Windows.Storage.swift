@@ -94,6 +94,11 @@ public final class PathIO {
         return try _IPathIOStatics.WriteBufferAsync(absolutePath, buffer)
     }
 
+    /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.storage.pathio.writebytesasync)
+    public static func writeBytesAsync(_ absolutePath: String, _ buffer: [UInt8]) throws -> test_component.AnyIAsyncAction! {
+        return try _IPathIOStatics.WriteBytesAsync(absolutePath, buffer)
+    }
+
 }
 
 /// [Open Microsoft documentation](https://learn.microsoft.com/uwp/api/windows.storage.storagefile)
@@ -107,12 +112,6 @@ public final class StorageFile : WinRTClass, IStorageItem, test_component.IRando
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageFile>?) -> StorageFile? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -388,12 +387,6 @@ public final class StorageFolder : WinRTClass, IStorageItem, IStorageFolder, tes
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageFolder>?) -> StorageFolder? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -705,12 +698,6 @@ public final class StorageLibraryChange : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageLibraryChange>?) -> StorageLibraryChange? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -759,12 +746,6 @@ public final class StorageLibraryChangeReader : WinRTClass {
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageLibraryChangeReader>?) -> StorageLibraryChangeReader? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -795,12 +776,6 @@ public final class StorageLibraryChangeTracker : WinRTClass {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageLibraryChangeTracker>?) -> StorageLibraryChangeTracker? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -839,12 +814,6 @@ public final class StorageProvider : WinRTClass {
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageProvider>?) -> StorageProvider? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)
@@ -888,12 +857,6 @@ public final class StorageStreamTransaction : WinRTClass, test_component.IClosab
     }
 
     @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CIStorageStreamTransaction>?) -> StorageStreamTransaction? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
-    }
-
-    @_spi(WinRTInternal)
     public init(fromAbi: test_component.IInspectable) {
         super.init(fromAbi)
     }
@@ -934,12 +897,6 @@ public final class StreamedFileDataRequest : WinRTClass, test_component.IClosabl
             return RawPointer(_default)
         }
         return super._getABI()
-    }
-
-    @_spi(WinRTInternal)
-    public static func from(abi: ComPtr<__x_ABI_CWindows_CStorage_CStreams_CIOutputStream>?) -> StreamedFileDataRequest? {
-        guard let abi = abi else { return nil }
-        return .init(fromAbi: test_component.IInspectable(abi))
     }
 
     @_spi(WinRTInternal)

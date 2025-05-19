@@ -124,4 +124,68 @@ public enum __IMPL_Windows_Foundation_Collections {
 
     }
 
+    public enum PropertySetBridge: AbiBridge {
+        public typealias SwiftProjection = PropertySet
+        public typealias CABI = __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CCollections_CIPropertySet>?) -> PropertySet? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum StringMapBridge: AbiBridge {
+        public typealias SwiftProjection = StringMap
+        public typealias CABI = __x_ABI_C__FIMap_2_HSTRING_HSTRING
+        public static func from(abi: ComPtr<__x_ABI_C__FIMap_2_HSTRING_HSTRING>?) -> StringMap? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+    public enum ValueSetBridge: AbiBridge {
+        public typealias SwiftProjection = ValueSet
+        public typealias CABI = __x_ABI_CWindows_CFoundation_CCollections_CIPropertySet
+        public static func from(abi: ComPtr<__x_ABI_CWindows_CFoundation_CCollections_CIPropertySet>?) -> ValueSet? {
+            guard let abi = abi else { return nil }
+            return .init(fromAbi: test_component.IInspectable(abi))
+        }
+    }
+
+}
+@_spi(WinRTInternal)
+public class IPropertySetMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIPropertySet
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Foundation_Collections.IPropertySet = try! abi.QueryInterface()
+        return __IMPL_Windows_Foundation_Collections.IPropertySetBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class IVectorChangedEventArgsMaker: MakeFromAbi {
+    public typealias SwiftType = AnyIVectorChangedEventArgs
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        let swiftAbi: __ABI_Windows_Foundation_Collections.IVectorChangedEventArgs = try! abi.QueryInterface()
+        return __IMPL_Windows_Foundation_Collections.IVectorChangedEventArgsBridge.from(abi: RawPointer(swiftAbi))!
+    }
+}
+@_spi(WinRTInternal)
+public class PropertySetMaker: MakeFromAbi {
+    public typealias SwiftType = PropertySet
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return PropertySet(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class StringMapMaker: MakeFromAbi {
+    public typealias SwiftType = StringMap
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return StringMap(fromAbi: abi)
+    }
+}
+@_spi(WinRTInternal)
+public class ValueSetMaker: MakeFromAbi {
+    public typealias SwiftType = ValueSet
+    public static func from(abi: test_component.IInspectable) -> SwiftType {
+        return ValueSet(fromAbi: abi)
+    }
 }
